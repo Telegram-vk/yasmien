@@ -321,6 +321,21 @@
                     errorMessage.style.display = 'none';
                 }
             });
+    // الحصول على العدد الحالي من localStorage أو تحديد العدد الأساسي إذا لم يكن موجودًا
+    let pageViews = localStorage.getItem('pageViews') || 89400;
+
+    // تحديث العنصر في صفحة الويب بالعدد الحالي
+    document.querySelector('.stat-value').textContent = pageViews;
+
+    // وظيفة لزيادة عدد المشاهدات بمقدار 37 كل 10 دقائق
+    function increasePageViews() {
+        pageViews = parseInt(pageViews) + 37; // زيادة العدد بمقدار 37
+        localStorage.setItem('pageViews', pageViews); // حفظ العدد الجديد في localStorage
+        document.querySelector('.stat-value').textContent = pageViews; // تحديث العنصر في الصفحة
+    }
+
+    // تعيين مؤقت لتحديث الرقم كل 10 دقائق (600000 ملي ثانية = 10 دقائق)
+    setInterval(increasePageViews, 600000);
         </script>
          <!-- إضافة الكارت الجديد في أسفل الصفحة -->
          <div class="stats shadow">
