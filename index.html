@@ -240,7 +240,6 @@
             <h2> ...🤍🚶‍♂️!©️ </h2>
             <button onclick="closePopup()">𝑐𝑙𝑜𝑠𝑒</button>
         </div>
-
         <script>
             // Function to close the popup and play sound
             function closePopup() {
@@ -321,27 +320,29 @@
                     errorMessage.style.display = 'none';
                 }
             });
- // الحصول على العنصر الذي يحتوي على العدد
- const pageViewsElement = document.getElementById('pageViews');
-        
-        // تحويل النص إلى عدد صحيح
-        let pageViews = parseInt(pageViewsElement.textContent.replace(/,/g, ''));
-
-        // دالة لتحديث العدد
-        function updatePageViews() {
-            pageViews += 37;
-            pageViewsElement.textContent = pageViews.toLocaleString();
-        }
-
-        // تحديث العدد كل 10 دقائق (600,000 ميلي ثانية)
-        setInterval(updatePageViews, 5000);
         </script>
          <!-- إضافة الكارت الجديد في أسفل الصفحة -->
          <div class="stats shadow">
             <div class="stat">
                 <div class="stat-title">Total Page Views</div>
-                <div class="stat-value" id="pageViews">89,400</div>
+                <div class="stat-value" id="pageViews">89,405</div>
                 <div class="stat-desc">21% more than last month</div>
             </div>
+            <script>
+                // الحصول على العنصر الذي يحتوي على العدد
+                const pageViewsElement = document.getElementById('pageViews');
+                
+                // تحويل النص إلى عدد صحيح
+                let pageViews = parseInt(pageViewsElement.textContent.replace(/,/g, ''));
+        
+                // دالة لتحديث العدد
+                function updatePageViews() {
+                    pageViews += 2; // زيادة العدد بمقدار 37
+                    pageViewsElement.textContent = pageViews.toLocaleString(); // تحديث النص المعروض
+                }
+        
+                // تحديث العدد كل 10 دقائق (600,000 ميلي ثانية)
+                setInterval(updatePageViews, 600000); // 10 دقائق
+            </script>
     </body>
     </html>
